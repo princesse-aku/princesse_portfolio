@@ -1,0 +1,180 @@
+.hero {
+  padding: 48px 0 24px;
+}
+
+.inner {
+  align-items: center;
+  display: grid;
+  gap: 32px;
+}
+
+.title {
+  font-size: clamp(2rem, 10vw, 4.25rem);
+  margin-top: 18px;
+}
+
+.line {
+  align-items: center;
+  display: flex;
+  gap: 0.14em;
+  white-space: nowrap;
+}
+
+.light {
+  font-weight: 400;
+}
+
+.ringIcon {
+  border: 0.04em solid var(--accent);
+  border-radius: 50%;
+  color: #fff;
+  display: grid;
+  flex: none;
+  height: 0.7em;
+  padding: 0.07em;
+  place-items: center;
+  width: 0.7em;
+}
+
+.ringIcon svg {
+  background: var(--accent);
+  border-radius: 50%;
+  height: 100%;
+  padding: 0.12em;
+  width: 100%;
+}
+
+.text {
+  position: relative;
+}
+
+.braces {
+  display: none;
+}
+
+.details {
+  position: relative;
+}
+
+.vertical,
+.mobileOnly {
+  display: none;
+}
+
+.mobileOnly {
+  display: contents;
+}
+
+.stack {
+  align-items: center;
+  color: var(--muted);
+  display: flex;
+  font-size: 1rem;
+  font-weight: 500;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.stack::before {
+  background: var(--ink);
+  content: "";
+  height: 2px;
+  width: 56px;
+}
+
+.lead {
+  color: var(--muted);
+  font-size: 1rem;
+  margin-top: 14px;
+  max-width: 46ch;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+@media (min-width: 860px) {
+  .inner {
+    grid-template-columns: 1.2fr 1fr;
+  }
+
+  .title {
+    font-size: clamp(2.75rem, 5.4vw, 4.25rem);
+  }
+
+  .mobileOnly {
+    display: none;
+  }
+
+  .braces {
+    color: var(--accent);
+    display: block;
+    fill: none;
+    height: 40px;
+    left: 4px;
+    position: absolute;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2.5;
+    top: -64px;
+    transform: rotate(-6deg);
+    width: 56px;
+  }
+
+  .details {
+    min-height: 150px;
+    padding-left: 64px;
+  }
+
+  .vertical {
+    display: block;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    left: 14px;
+    letter-spacing: 0.04em;
+    position: absolute;
+    text-decoration: none;
+    text-transform: uppercase;
+    top: 24px;
+    white-space: nowrap;
+    writing-mode: vertical-rl;
+  }
+
+  .vertical:hover {
+    color: var(--accent-text);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .text > :not(.braces) {
+    animation: rise 0.7s both;
+  }
+
+  .text > :nth-child(3) {
+    animation-delay: 0.08s;
+  }
+
+  .text > :nth-child(4) {
+    animation-delay: 0.16s;
+  }
+
+  .text > :nth-child(5) {
+    animation-delay: 0.24s;
+  }
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}

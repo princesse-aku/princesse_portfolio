@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Princesse ALAGNON | Développeuse web et mobile</title>
+  <meta name="description" content="Princesse ALAGNON, développeuse web et mobile : interfaces soignées, APIs et applications Flutter, de l'idée jusqu'à la mise en ligne.">
+  <meta name="theme-color" content="#FFFFFF">
+  <link rel="canonical" href="https://alaprincesse.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Princesse ALAGNON | Développeuse web et mobile">
+  <meta property="og:description" content="Interfaces soignées, APIs et applications Flutter, de l'idée jusqu'à la mise en ligne.">
+  <meta property="og:url" content="https://alaprincesse.com/">
+  <meta property="og:locale" content="fr_FR">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23F58A1F'/%3E%3Ctext x='32' y='45' font-size='34' text-anchor='middle' font-family='Arial,sans-serif' font-weight='800' fill='%23fff'%3EP%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #FFFFFF; --ink: #161616; --muted: #5f5a55;
+      --accent: #F58A1F; --accent-dark: #D9730D;
+      --beige: #F7EEE6; --peach: #FBD9B8; --line: #EADFD3;
+    }
+    * { box-sizing: border-box; margin: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif; background: var(--bg); color: var(--ink); line-height: 1.6; font-size: 17px; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    a { color: inherit; }
+    img { max-width: 100%; display: block; }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 500; }
+    .eyebrow::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
+    h1, h2 { text-transform: uppercase; font-weight: 700; line-height: 1.05; letter-spacing: -0.01em; }
+    h1 { font-size: clamp(44px, 8vw, 88px); margin-top: 18px; }
+    h2 { font-size: clamp(32px, 5.2vw, 56px); margin-top: 14px; }
+    .dot { display: inline-block; width: .62em; height: .62em; border: .14em solid var(--accent); border-radius: 50%; vertical-align: -.02em; margin-left: .12em; }
+    .accent { color: var(--accent); }
+
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 26px; border-radius: 999px; font-weight: 600; font-size: 15px; text-decoration: none; transition: .2s; border: 1.5px solid transparent; }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: var(--accent-dark); }
+    .btn-dark { background: var(--ink); color: #fff; }
+    .btn-dark:hover { background: #333; }
+    .btn-ghost { border-color: var(--ink); }
+    .btn-ghost:hover { background: var(--ink); color: #fff; }
+    .link { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; text-decoration: none; }
+    .link::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
+    .link:hover { color: var(--accent-dark); }
+
+    header { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+    header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 72px; }
+    .brand { font-weight: 800; font-size: 22px; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+    .brand i { width: 14px; height: 14px; border-radius: 50%; background: var(--accent); }
+    nav { display: flex; gap: 28px; }
+    nav a { text-decoration: none; font-size: 15px; font-weight: 500; color: var(--muted); }
+    nav a:hover { color: var(--accent); }
+
+    .hero { padding: 48px 0 24px; position: relative; }
+    .hero .wrap { display: grid; gap: 32px; align-items: center; }
+    .hero-text .lead { margin-top: 22px; color: var(--muted); max-width: 46ch; font-size: 18px; }
+    .hero-text .cta { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 12px; }
+    .hero-art { position: relative; justify-self: center; width: min(440px, 100%); }
+    .arch { aspect-ratio: 4 / 5; position: relative; margin-top: 24px; }
+    .arch .dash { position: absolute; left: 50%; top: 50%; width: 112%; aspect-ratio: 1; transform: translate(-50%, -48%); border: 2px dashed rgba(245,138,31,.55); border-radius: 50%; }
+    .arch .blob { position: absolute; left: 50%; top: 18%; bottom: 0; width: 68%; transform: translateX(-50%); background: var(--peach); border-radius: 999px 999px 40px 40px; }
+    .arch > img { position: absolute; bottom: 0; left: 50%; height: 100%; width: auto; max-width: none; transform: translateX(-50%); }
+    .doodle { position: absolute; color: var(--accent); }
+    .doodle.d1 { left: -6%; top: 12%; width: 54px; transform: rotate(-12deg); }
+    .doodle.d2 { right: 2%; top: 4%; width: 64px; }
+    .float { position: absolute; background: #fff; border: 1px solid var(--line); border-radius: 16px; box-shadow: 0 18px 40px -20px rgba(0,0,0,.3); padding: 10px 16px; font-size: 14px; font-weight: 600; }
+    .float.status { left: -12px; bottom: 36px; display: flex; align-items: center; gap: 10px; }
+    .float.status::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: #2fbf71; box-shadow: 0 0 0 4px rgba(47,191,113,.2); }
+    .float.t1 { right: -10px; top: 30%; background: var(--accent); color: #fff; border: 0; }
+    .float.t2 { right: -6px; bottom: -2%; background: var(--ink); color: #fff; border: 0; }
+
+    .about { background: var(--beige); margin-top: 72px; padding: 80px 0; }
+    .about .wrap { display: grid; gap: 48px; align-items: center; }
+    .shots { display: grid; grid-template-columns: 1fr 1.2fr 1fr; gap: 14px; align-items: end; }
+    .shot { border-radius: 18px; background: var(--peach); overflow: hidden; position: relative; aspect-ratio: 3 / 5; }
+    .shot:nth-child(2) { aspect-ratio: 3 / 6; }
+    .shot:nth-child(3) { aspect-ratio: 3 / 4.2; }
+    .shot img { width: 100%; height: 100%; object-fit: cover; }
+    .shot span { position: absolute; left: 10px; bottom: 10px; background: #fff; border-radius: 999px; padding: 2px 12px; font-size: 12px; font-weight: 600; }
+    .about p.txt { margin-top: 22px; color: var(--muted); max-width: 52ch; }
+    .about .btn { margin-top: 28px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+    .chip { padding: 7px 16px; border-radius: 999px; background: #fff; border: 1px solid var(--line); font-size: 14px; font-weight: 500; }
+    .chip.hot { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+    section.block { padding: 88px 0 24px; }
+    .head { text-align: center; }
+    .head p { color: var(--muted); max-width: 52ch; margin: 14px auto 0; }
+
+    .services { margin-top: 56px; position: relative; display: grid; gap: 28px; }
+    .services::before { content: ""; position: absolute; left: 50%; top: 10px; bottom: 10px; border-left: 2px dotted var(--accent); display: none; }
+    .service { display: grid; gap: 18px; align-items: center; position: relative; }
+    .service .pic { background: var(--peach); border-radius: 20px; aspect-ratio: 16 / 10; display: grid; place-items: center; font-size: 88px; font-weight: 800; color: #fff; letter-spacing: -.04em; }
+    .service:nth-child(2) .pic { background: var(--beige); color: var(--peach); }
+    .service:nth-child(3) .pic { background: var(--accent); }
+    .service:nth-child(4) .pic { background: var(--ink); color: var(--accent); }
+    .service h3 { font-size: 22px; font-weight: 700; margin: 8px 0; }
+    .service p { color: var(--muted); font-size: 16px; margin-bottom: 12px; }
+
+    .work { display: grid; gap: 28px; margin-top: 48px; }
+    .project { text-decoration: none; display: flex; flex-direction: column; }
+    .project .shot { aspect-ratio: 16 / 11; border-radius: 22px; transition: transform .25s; }
+    .project:hover .shot { transform: translateY(-4px); }
+    .ph { position: absolute; inset: 0; display: grid; place-items: center; font-weight: 800; font-size: clamp(26px, 4vw, 40px); color: rgba(255,255,255,.95); letter-spacing: -.02em; }
+    .p1 .shot { background: var(--accent); } .p2 .shot { background: var(--ink); } .p3 .shot { background: var(--peach); } .p4 .shot { background: var(--beige); }
+    .p3 .ph, .p4 .ph { color: var(--accent); }
+    .project h3 { font-size: 22px; font-weight: 700; margin-top: 18px; }
+    .project p { color: var(--muted); font-size: 16px; margin-top: 6px; }
+    .project .tag { margin-top: 12px; font-size: 13px; font-weight: 600; color: var(--accent-dark); }
+
+    .cta-band { margin-top: 88px; position: relative; min-height: 380px; display: grid; place-items: center; padding: 48px 24px; background: var(--peach); overflow: hidden; }
+    .cta-band::before, .cta-band::after { content: ""; position: absolute; border-radius: 50%; }
+    .cta-band::before { width: 340px; height: 340px; background: var(--accent); left: -110px; bottom: -150px; }
+    .cta-band::after { width: 200px; height: 200px; border: 28px solid #fff; right: -60px; top: -60px; }
+    .card { position: relative; z-index: 1; background: #fff; border-radius: 24px; padding: clamp(28px, 5vw, 48px); max-width: 560px; text-align: center; box-shadow: 0 30px 60px -30px rgba(0,0,0,.35); }
+    .card h2 { font-size: clamp(26px, 4vw, 38px); margin-top: 12px; }
+    .card p { color: var(--muted); margin-top: 14px; }
+    .card .cta { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+
+    footer { padding: 40px 0 48px; text-align: center; color: var(--muted); font-size: 15px; }
+    footer a { color: var(--accent-dark); font-weight: 600; text-decoration: none; }
+
+    @media (min-width: 860px) {
+      .hero .wrap { grid-template-columns: 1.1fr 1fr; }
+      .about .wrap { grid-template-columns: 1fr 1fr; }
+      .work { grid-template-columns: repeat(2, 1fr); gap: 40px 32px; }
+      .services::before { display: block; }
+      .service { grid-template-columns: 1fr 1fr; gap: 80px; }
+      .service:nth-child(even) .pic { order: 2; }
+    }
+    @media (max-width: 640px) { nav a:not(:last-child) { display: none; } .btn { width: 100%; } header .btn { width: auto; } .float.status { left: 0; } .float.t1, .float.t2 { right: 0; } }
+    @media (prefers-reduced-motion: no-preference) {
+      .hero-text > *, .hero-art { animation: up .7s both; }
+      .hero-text > *:nth-child(2) { animation-delay: .08s; } .hero-text > *:nth-child(3) { animation-delay: .16s; } .hero-text > *:nth-child(4) { animation-delay: .24s; } .hero-art { animation-delay: .2s; }
+      @keyframes up { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <a class="brand" href="/"><i></i>Princesse</a>
+      <nav aria-label="Navigation">
+        <a href="#a-propos">À propos</a>
+        <a href="#services">Services</a>
+        <a href="#projets">Projets</a>
+      </nav>
+      <a class="btn btn-dark" href="#contact" style="min-height:42px;padding:0 20px">Contact</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div class="wrap">
+        <div class="hero-text">
+          <p class="eyebrow">Salut, je suis Princesse ALAGNON</p>
+          <h1>Développeuse<br>web <span class="accent">&amp;</span> mobile<span class="dot"></span></h1>
+          <p class="lead">Je conçois des interfaces soignées, des APIs et des applications Flutter, de l'idée jusqu'à la mise en ligne.</p>
+          <div class="cta">
+            <a class="btn btn-primary" href="#projets">Voir mes projets</a>
+            <a class="btn btn-ghost" href="mailto:alaprincesse05@gmail.com">Me contacter</a>
+          </div>
+        </div>
+        <div class="hero-art">
+          <div class="arch">
+            <span class="dash"></span>
+            <span class="blob"></span>
+            <svg class="doodle d1" viewBox="0 0 54 54" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M8 40 L36 8 L46 16 L18 48 Z"/><path d="M8 40 L4 50 L18 48"/><path d="M32 12 L42 20"/></svg>
+            <svg class="doodle d2" viewBox="0 0 64 40" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 34 C 20 6, 42 4, 58 20"/><path d="M48 18 L58 20 L54 29"/></svg>
+            <!-- photo détourée : <img src="images/moi/hero.png" alt="Portrait de Princesse ALAGNON"> -->
+          </div>
+          <span class="float t1">Flutter</span>
+          <span class="float t2">Next.js</span>
+          <span class="float status">Disponible pour projets</span>
+        </div>
+      </div>
+    </div>
+
+    <section class="about" id="a-propos">
+      <div class="wrap">
+        <!-- 3 photos de moi : remplacer par <img src="images/moi/about-1.jpg" alt="..."> -->
+        <div class="shots" aria-label="Photos de Princesse">
+          <div class="shot"></div>
+          <div class="shot"></div>
+          <div class="shot"></div>
+        </div>
+        <div>
+          <p class="eyebrow">À propos</p>
+          <h2>Bonjour, <span class="accent">moi c'est</span> Princesse</h2>
+          <p class="txt">J'aime les produits bien finis : une interface claire, une API solide, et un déploiement qui ne laisse rien au hasard. Je travaille sur le web comme sur mobile, avec le même souci du détail.</p>
+          <p class="txt" style="margin-top:12px">En ce moment, je construis LinkP, un outil qui aide à écrire ses posts LinkedIn dans sa propre voix.</p>
+          <div class="chips">
+            <span class="chip hot">Next.js</span><span class="chip">React</span><span class="chip">TypeScript</span>
+            <span class="chip hot">Flutter</span><span class="chip">Dart</span>
+            <span class="chip">Python</span><span class="chip">FastAPI</span>
+            <span class="chip hot">Firebase</span><span class="chip">JavaScript</span><span class="chip">Tailwind CSS</span>
+          </div>
+          <a class="btn btn-dark" href="#contact">Travaillons ensemble</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="services">
+      <div class="wrap">
+        <div class="head">
+          <p class="eyebrow">Mes services</p>
+          <h2>Ce que je peux <span class="accent">faire</span> pour vous</h2>
+        </div>
+        <div class="services">
+          <div class="service">
+            <div class="pic">01</div>
+            <div>
+              <h3>Sites et applications web</h3>
+              <p>Des interfaces claires, rapides et responsives avec Next.js, React et Tailwind CSS.</p>
+              <a class="link" href="#contact">En discuter</a>
+            </div>
+          </div>
+          <div class="service">
+            <div class="pic">02</div>
+            <div>
+              <h3>Applications mobiles</h3>
+              <p>Des apps Android et iOS avec Flutter, une gestion d'état propre et un mode hors ligne quand il le faut.</p>
+              <a class="link" href="#contact">En discuter</a>
+            </div>
+          </div>
+          <div class="service">
+            <div class="pic">03</div>
+            <div>
+              <h3>APIs et back-end</h3>
+              <p>Des APIs solides avec Python et FastAPI, connectées à Firebase ou à votre base de données.</p>
+              <a class="link" href="#contact">En discuter</a>
+            </div>
+          </div>
+          <div class="service">
+            <div class="pic">04</div>
+            <div>
+              <h3>Mise en ligne</h3>
+              <p>Un déploiement soigné : nom de domaine, hébergement et suivi, pour que rien ne soit laissé au hasard.</p>
+              <a class="link" href="#contact">En discuter</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="projets">
+      <div class="wrap">
+        <div class="head">
+          <p class="eyebrow">Projets</p>
+          <h2>Réalisations <span class="accent">à la une</span></h2>
+        </div>
+        <div class="work">
+          <a class="project p1" href="https://linkp.alaprincesse.com" target="_blank" rel="noopener">
+            <div class="shot"><div class="ph">LinkP</div></div>
+            <h3>LinkP</h3>
+            <p>Un assistant pour rédiger ses posts LinkedIn dans sa voix : idées, brouillons par IA, planning et rappels dans l'agenda.</p>
+            <span class="tag">Next.js, FastAPI, Firebase</span>
+          </a>
+          <a class="project p2" href="https://github.com/princesse-aku/princess_buster" target="_blank" rel="noopener">
+            <div class="shot"><div class="ph">Princess Buster</div></div>
+            <h3>Princess Buster</h3>
+            <p>Un jeu de tir 2.5D où l'on fait tomber des piles de cubes de langages et de frameworks avec un nombre limité de balles.</p>
+            <span class="tag">JavaScript, Matter.js, SQLite</span>
+          </a>
+          <a class="project p3" href="https://github.com/princesse-aku/newsflow" target="_blank" rel="noopener">
+            <div class="shot"><div class="ph">NewsFlow</div></div>
+            <h3>NewsFlow</h3>
+            <p>Une application mobile pour consulter, rechercher et sauvegarder des actualités, avec un mode hors ligne.</p>
+            <span class="tag">Flutter, Firebase, Hive</span>
+          </a>
+          <a class="project p4" href="https://github.com/princesse-aku/ShopFlow" target="_blank" rel="noopener">
+            <div class="shot"><div class="ph">ShopFlow</div></div>
+            <h3>ShopFlow</h3>
+            <p>Une application e-commerce mobile, avec une gestion d'état propre et une logique métier séparée de l'interface.</p>
+            <span class="tag">Flutter, Riverpod</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band" id="contact">
+      <div class="card">
+        <p class="eyebrow">Contact</p>
+        <h2>Un projet en tête ? <span class="accent">Parlons-en</span></h2>
+        <p>Écris-moi, je réponds avec plaisir.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="mailto:alaprincesse05@gmail.com">alaprincesse05@gmail.com</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/princess-alagnon/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn btn-ghost" href="https://github.com/princesse-aku" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">Princesse ALAGNON, développeuse web et mobile. <a href="https://linkp.alaprincesse.com">Découvrir LinkP</a></div>
+  </footer>
+</body>
+</html>

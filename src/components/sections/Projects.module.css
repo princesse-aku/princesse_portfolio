@@ -1,0 +1,105 @@
+.projects {
+  padding: 88px 0 24px;
+}
+
+.grid {
+  display: grid;
+  gap: 28px;
+  list-style: none;
+  margin-top: 48px;
+  padding: 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+
+.visual {
+  aspect-ratio: 16 / 9;
+  border-radius: 22px;
+  transition: transform 0.25s;
+}
+
+.media {
+  position: relative;
+}
+
+.card:hover .visual {
+  transform: translateY(-4px);
+}
+
+/* Pastille « Voir le projet » : indique que la carte est cliquable. */
+.cta {
+  align-items: center;
+  background: #fff;
+  border-radius: 999px;
+  bottom: 14px;
+  box-shadow: 0 6px 18px -6px rgba(0, 0, 0, 0.35);
+  color: var(--ink);
+  display: inline-flex;
+  font-size: 0.875rem;
+  font-weight: 700;
+  gap: 8px;
+  padding: 9px 16px;
+  position: absolute;
+  right: 14px;
+  transition:
+    background 0.25s,
+    color 0.25s,
+    transform 0.25s;
+}
+
+.card:hover .cta,
+.card:focus-visible .cta {
+  background: var(--accent);
+  color: #fff;
+  transform: translateY(-4px);
+}
+
+.card h3 {
+  font-size: 1.375rem;
+  font-weight: 700;
+  margin-top: 18px;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 1rem;
+  margin-top: 6px;
+}
+
+.stack {
+  color: var(--accent-text);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  margin-top: 12px;
+}
+
+.accent .visual {
+  background: var(--accent);
+  color: #fff;
+}
+
+.dark .visual {
+  background: var(--ink);
+  color: #fff;
+}
+
+.peach .visual {
+  background: var(--peach);
+  color: var(--accent-text);
+}
+
+.beige .visual {
+  background: var(--beige);
+  color: var(--accent-text);
+}
+
+@media (min-width: 860px) {
+  .grid {
+    gap: 40px 32px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

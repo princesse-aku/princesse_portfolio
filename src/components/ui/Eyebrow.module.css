@@ -1,0 +1,17 @@
+.eyebrow {
+  align-items: center;
+  display: inline-flex;
+  font-size: 0.875rem;
+  font-weight: 500;
+  gap: 18px;
+}
+
+/* Deux pastilles : la première suit la couleur du texte (blanche sur fond sombre), la seconde est orange. */
+.eyebrow::before {
+  background: currentColor;
+  border-radius: 50%;
+  box-shadow: 11px 0 0 var(--accent);
+  content: "";
+  height: 14px;
+  width: 14px;
+}

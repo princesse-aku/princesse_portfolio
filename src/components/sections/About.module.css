@@ -1,0 +1,159 @@
+.about {
+  background: var(--ink);
+  border-bottom: 6px solid var(--accent);
+  border-top: 6px solid var(--accent);
+  color: #fff;
+  margin-top: 72px;
+  padding: 72px 0;
+}
+
+.inner {
+  display: grid;
+  gap: 40px;
+}
+
+.photoBox {
+  aspect-ratio: 1;
+  margin-inline: auto;
+  max-width: 460px;
+  position: relative;
+  width: 100%;
+}
+
+.photoBox::before {
+  background: var(--accent);
+  clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%, 0 10%);
+  content: "";
+  inset: 14% 0 0;
+  position: absolute;
+}
+
+.photo {
+  object-fit: contain;
+  object-position: center bottom;
+  padding-inline: 6%;
+}
+
+.tags {
+  bottom: 6%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  left: 3%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  right: 3%;
+}
+
+.tag {
+  border-radius: 999px;
+  font-size: clamp(0.75rem, 2.4vw, 0.9375rem);
+  font-weight: 700;
+  padding: 7px 16px;
+}
+
+.tag[data-tone="dark"] {
+  background: var(--ink);
+  color: #fff;
+}
+
+.tag[data-tone="orange"] {
+  background: var(--accent);
+  color: var(--ink);
+}
+
+.tag:nth-child(odd) {
+  transform: rotate(-5deg);
+}
+
+.tag:nth-child(even) {
+  transform: rotate(4deg);
+}
+
+.text {
+  align-self: center;
+}
+
+.eyebrow {
+  align-items: center;
+  display: inline-flex;
+  font-size: 0.9375rem;
+  gap: 10px;
+}
+
+.eyebrow::before {
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 10px 0 0 var(--accent);
+  content: "";
+  height: 16px;
+  margin-right: 10px;
+  width: 16px;
+}
+
+.title {
+  font-size: clamp(1.75rem, 4.4vw, 3rem);
+  font-weight: 700;
+  margin-top: 16px;
+  text-transform: none;
+}
+
+.name {
+  color: var(--accent);
+}
+
+.paragraph {
+  color: #d9d2cb;
+  margin-top: 20px;
+  max-width: 46ch;
+}
+
+.actions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 28px;
+}
+
+.cta {
+  align-items: center;
+  background: var(--ink);
+  border: 1.5px solid var(--accent);
+  border-radius: 999px;
+  color: #fff;
+  display: inline-flex;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  gap: 18px;
+  padding: 6px 6px 6px 26px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.cta:hover {
+  background: #2a2a2a;
+}
+
+.ctaIcon {
+  align-items: center;
+  background: #fff;
+  border-radius: 50%;
+  color: var(--ink);
+  display: inline-flex;
+  height: 38px;
+  justify-content: center;
+  width: 38px;
+}
+
+@media (min-width: 860px) {
+  .inner {
+    align-items: center;
+    column-gap: 64px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+}

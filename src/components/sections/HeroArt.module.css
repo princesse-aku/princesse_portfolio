@@ -1,0 +1,126 @@
+.art {
+  justify-self: center;
+  position: relative;
+  /* Sur écran peu haut, le visuel rétrécit pour rester entièrement visible. */
+  width: min(440px, 100%, max(280px, calc((100svh - 190px) * 0.8)));
+}
+
+.stage {
+  aspect-ratio: 4 / 5;
+  margin-top: 24px;
+  position: relative;
+}
+
+.dashed {
+  aspect-ratio: 1;
+  /* Seule la partie haute du cercle est visible : il s'arrête au bas de la photo. */
+  clip-path: inset(0 0 20% 0);
+  border: 2px dashed rgb(245 138 31 / 0.55);
+  border-radius: 50%;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -48%);
+  width: 112%;
+}
+
+.blob {
+  background: var(--peach);
+  border-radius: 999px 999px 40px 40px;
+  bottom: 21%;
+  left: 50%;
+  position: absolute;
+  top: 14%;
+  transform: translateX(-50%);
+  width: 74%;
+}
+
+.photo {
+  bottom: 21%;
+  left: -5%;
+  position: absolute;
+  top: 0;
+  width: 110%;
+}
+
+.photoImage {
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+.doodle {
+  color: var(--accent);
+  fill: none;
+  position: absolute;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.5;
+}
+
+.code {
+  left: -6%;
+  top: 12%;
+  transform: rotate(-8deg);
+  width: 64px;
+}
+
+.cursor {
+  right: 14%;
+  top: 87%;
+  transform: rotate(-10deg);
+  width: 34px;
+}
+
+.badge {
+  border-radius: 16px;
+  box-shadow: 0 18px 40px -20px rgb(0 0 0 / 0.3);
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 10px 16px;
+  position: absolute;
+}
+
+.accent {
+  background: var(--accent);
+  color: var(--ink);
+  right: -10px;
+  top: 30%;
+}
+
+.dark {
+  background: var(--ink);
+  bottom: 15%;
+  color: #fff;
+  right: -7%;
+}
+
+.status {
+  align-items: center;
+  background: #fff;
+  border: 1px solid var(--line);
+  bottom: 14%;
+  display: flex;
+  font-size: 1.125rem;
+  gap: 14px;
+  left: 28%;
+  padding: 18px 28px;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.status::before {
+  background: #2fbf71;
+  border-radius: 50%;
+  box-shadow: 0 0 0 6px rgb(47 191 113 / 0.2);
+  content: "";
+  height: 14px;
+  width: 14px;
+}
+
+@media (max-width: 640px) {
+  .accent,
+  .dark {
+    right: 0;
+  }
+}

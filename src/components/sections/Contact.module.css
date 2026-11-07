@@ -1,0 +1,59 @@
+.contact {
+  background: var(--peach);
+  margin-top: 64px;
+  overflow: hidden;
+  padding: 64px 0 72px;
+  position: relative;
+}
+
+.contact::before {
+  background: var(--accent);
+  border-radius: 50%;
+  bottom: -170px;
+  content: "";
+  height: 340px;
+  left: -120px;
+  opacity: 0.9;
+  position: absolute;
+  width: 340px;
+}
+
+.inner {
+  display: grid;
+  gap: 40px;
+  justify-items: center;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+.inner > p {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+@media (min-width: 860px) {
+  .inner > p {
+    font-size: 1.25rem;
+  }
+}
+
+.form {
+  background: #fff;
+  border: 0;
+  border-radius: 28px;
+  box-shadow: 0 30px 60px -30px rgb(0 0 0 / 0.35);
+  height: 560px;
+  max-width: 720px;
+  width: 100%;
+}
+
+.inner > .pending {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.pending a {
+  color: var(--accent-text);
+  font-weight: 600;
+}
