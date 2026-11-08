@@ -7,7 +7,7 @@ export const site = {
     "Princesse ALAGNON, développeuse web et mobile : interfaces soignées, APIs et applications Flutter, de l'idée jusqu'à la mise en ligne.",
   shortDescription:
     "Interfaces soignées, APIs et applications Flutter, de l'idée jusqu'à la mise en ligne.",
-  email: "alaprincesse05@gmail.com",
+  email: "me@alaprincesse.com",
   linkedin: "https://www.linkedin.com/in/princess-alagnon/",
   github: "https://github.com/princesse-aku",
   linkp: "https://linkp.alaprincesse.com",
