@@ -30,7 +30,7 @@ export function MobileMenu() {
         <span className={styles.bars} aria-hidden="true" />
       </button>
       <nav id="menu-mobile" className={styles.panel} aria-label="Navigation principale" hidden={!open}>
-        {navigation.map((item) => (
+        {[...navigation, { label: "Contact", href: "#contact" }].map((item) => (
           <a key={item.href} href={item.href} onClick={() => setOpen(false)}>
             {item.label}
           </a>
